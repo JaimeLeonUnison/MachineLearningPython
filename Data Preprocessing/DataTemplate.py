@@ -55,3 +55,12 @@ print("Datos de Y_Train después de dividir:")
 print (Y_train)
 print("Datos de Y_Test después de dividir:")
 print (Y_test)
+
+from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+X_train[:, 3:] = sc.fit_transform(X_train[:, 3:])
+X_test[:, 3:] = sc.transform(X_test[:, 3:])
+print("Datos de X_Train después de escalar:")
+print (X_train)
+print("Datos de X_Test después de escalar:")
+print (X_test)
